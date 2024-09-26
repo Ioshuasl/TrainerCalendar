@@ -28,13 +28,16 @@ class AppController {
     async createTreino(titulo, data, horaInicio, horaTermino, descricao, qtdTreinos,aluno_id){
         
         data = new Date(data)
+        titulo.toString().toLowerCase()
 
-        const verificarDia = await Treino.findOne({where: {data:data}})
-        const verificarHoraInicio = await Treino.findOne({where: {horaInicio:horaInicio}})
-        const verificarHoraTermino = await Treino.findOne({where: {horaTermino:horaTermino}})
+        const verificarTreino = await Treino.findOne({where: {
+            data:data,
+            horaInicio: horaInicio,
+            horaTermino: horaTermino
+        }})
 
-        if (verificarDia && verificarHoraInicio && verificarHoraTermino) {
-            return {erro: "já existe treino para essa data",verificarDia}
+        if (verificarTreino) {
+            return {erro: "já existe treino para essa data",verificarTreino}
         }
 
         const intervaloDeDias = 7;
@@ -100,6 +103,15 @@ class AppController {
     async deleteTreino(id){
         await Treino.destroy({where: {id}})
         return {message: "Treino removido com sucesso"}
+    }
+
+    async deleteTreinoAlunoIdByTitulo(titulo,aluno_id){
+
+        await Treino.destroy({where:{
+            aluno_id:aluno_id,
+            titulo:titulo
+        }})
+        return {message: `Treinos de ${titulo} removidos com sucesso`}
     }
 }
 

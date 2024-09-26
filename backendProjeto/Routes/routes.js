@@ -78,12 +78,30 @@ router.get('/treinoId/:id', async (req,res) =>{
     }
 })
 
+router.put('/updateTreino', async (req,res) =>{
+    const { id,titulo,data,horaInicio,horaTermino,descricao,qtdTreinos,aluno_id } = req.body
+
+    const treino = AppController.updateTreino(id,(titulo,data,horaInicio,horaTermino,descricao,qtdTreinos,aluno_id))
+    return res.json(treino)
+})
+
 router.delete('/deleteTreino/:id', async (req,res) =>{
     const {id} = req.params
 
     try {
         const treinoDeleted = await AppController.deleteTreino(id)
         return res.json(treinoDeleted)        
+    } catch (error) {
+        return res.json(error)
+    }
+})
+
+router.delete('/deleteTreinoAlunoIdByTitulo/:aluno_id/:titulo', async (req,res) => {
+    const {aluno_id,titulo} = req.params
+
+    try {
+        const treinosDeleted = await AppController.deleteTreinoAlunoIdByTitulo(titulo,aluno_id)
+        return res.json(treinosDeleted)
     } catch (error) {
         return res.json(error)
     }

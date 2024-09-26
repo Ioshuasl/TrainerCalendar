@@ -1,0 +1,15 @@
+comandos no terminal para conseguir rodar o projeto
+
+npm init(se não tiver o arquivo package.json)
+
+npm install express para instalar o express
+
+npm install pg
+
+npm install sequelize pg
+
+docker run --name appteste -e POSTGRES_PASSWORD=1234 -d -p 5432:5432 postgres
+
+node index.js
+
+OBS precisa ter o Docker para rodar a aplicação 
