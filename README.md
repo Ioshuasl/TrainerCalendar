@@ -39,11 +39,11 @@ Inicializando o servidor
 node index.js
 
 ##Funcionalidades
-Criar aluno: cadastra um novo aluno dentro do sistema
-Listar alunos: mostrar todos os alunos cadastrados dentro do sistema
-Atualizar aluno: atualiza o aluno que desejar
-Deletar aluno: deleta o aluno dentro do sistema
-Criar treinos: cadastra treinos para os alunos dentro do sistema, nessa funcionalidade também tem a função de criar treinos posteriores para as próximas semanas
-Listar treinos: mostrar todos os treinos de todos os alunos cadastrados no sistema
-Atualizar treino: atualiza o treino que desejar
-Deletar treino: deleta o treino dentro do sistema e se quiser também deleta os treinos posteriores a esses
+- Criar aluno: cadastra um novo aluno dentro do sistema
+- Listar alunos: mostrar todos os alunos cadastrados dentro do sistema
+- Atualizar aluno: atualiza o aluno que desejar
+-Deletar aluno: deleta o aluno dentro do sistema
+- Criar treinos: cadastra treinos para os alunos dentro do sistema, nessa funcionalidade também tem a função de criar treinos posteriores para as próximas semanas
+- Listar treinos: mostrar todos os treinos de todos os alunos cadastrados no sistema
+- Atualizar treino: atualiza o treino que desejar
+- Deletar treino: deleta o treino dentro do sistema e se quiser também deleta os treinos posteriores a esses
