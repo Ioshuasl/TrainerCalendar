@@ -30,6 +30,7 @@ class AppController {
         data = new Date(data)
         titulo.toString().toLowerCase()
 
+        //funcao para evitar colisão de horários
         const verificarTreino = await Treino.findOne({where: {
             data:data,
             horaInicio: horaInicio,
@@ -85,10 +86,13 @@ class AppController {
     }
 
     async getTreinosHoje(){
-        let hoje = new Date()
+
+        const hoje = new Date()
+
+        const hojeDia = new Date(`${(hoje.getFullYear())}-${hoje.getMonth() + 1}-${hoje.getDate()}`)
 
         const treinos = Treino.findAll({
-            where: {data: hoje},
+            where: {data: hojeDia},
             include: [Aluno]
         })
 
@@ -107,11 +111,11 @@ class AppController {
 
     async deleteTreinoAlunoIdByTitulo(titulo,aluno_id){
 
-        await Treino.destroy({where:{
+        const treino = await Treino.destroy({where:{
             aluno_id:aluno_id,
             titulo:titulo
         }})
-        return {message: `Treinos de ${titulo} removidos com sucesso`}
+        return {message: `Treinos de ${titulo} removidos com sucesso`, treino}
     }
 }
 
