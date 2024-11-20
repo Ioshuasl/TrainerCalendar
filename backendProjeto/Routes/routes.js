@@ -106,4 +106,27 @@ router.delete('/deleteTreinoAlunoIdByTitulo/:aluno_id/:titulo', async (req,res) 
         return res.json(error)
     }
 })
+
+router.get('/getTreinosHoje', async (req,res) =>{
+    try {
+        const treinosHoje = await AppController.getTreinosHoje()
+        return res.json(treinosHoje)
+    } catch (error) {
+        return res.json(error)
+    }
+})
+
+router.get('/getTreinosData/:varData', async (req,res) =>{
+    const {varData} = req.params
+    
+    try {
+        const data = new Date(varData)
+        const treinosData = await AppController.getTreinosData(data)
+        return res.json(treinosData)
+    } catch (error) {
+        return res.json(error)
+    }
+})
+
+
 export default router
