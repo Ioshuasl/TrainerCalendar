@@ -1,7 +1,26 @@
-##Sobre o projeto
-Estou desenvolvendo uma agenda para personal trainers com o intuito de terem mais praticidade durante seu dia a dia, poder ter cada aluno, cada treino, data e horário na palma de sua mão
+# 🏋️‍♂️ Trainer Calendar
 
-##Estrutura de pastas
+**Trainer Calendar** é uma agenda digital desenvolvida para personal trainers que buscam mais praticidade e organização no seu dia a dia. Com ela, é possível gerenciar alunos, treinos, datas e horários de forma simples e eficiente — tudo na palma da mão!
+
+---
+
+## ⚙️ Funcionalidades
+
+- 📌 **Criar Aluno**: Cadastro de novos alunos no sistema  
+- 📋 **Listar Alunos**: Exibe todos os alunos cadastrados  
+- ✏️ **Atualizar Aluno**: Atualiza os dados de um aluno específico  
+- ❌ **Deletar Aluno**: Remove um aluno do sistema  
+
+- 🏋️‍♂️ **Criar Treino**: Cadastro de treinos individuais e sequenciais automatizados para semanas futuras  
+- 📅 **Listar Treinos**: Mostra todos os treinos cadastrados de todos os alunos, podendo ser de acordo com data, ou de acordo com o aluno também
+- 🔄 **Atualizar Treino**: Edita os detalhes de um treino específico  
+- 🗑️ **Deletar Treino**: Exclui um treino e, se desejar, todos os treinos posteriores  
+
+---
+
+## 📁 Estrutura de Pastas
+
+```bash
 /src             #código principal da aplicação
 	/controllers   #funções de controle de rotas
 	/models        #modelos de dados do banco de dados
@@ -9,41 +28,43 @@ Estou desenvolvendo uma agenda para personal trainers com o intuito de terem mai
 	/config        #Configuração para sincronizar a API com o banco de dados
 /docs            #Documentação do projeto
 /tests           #Testes automatizados
+```
 
-##Tecnologias utilizadas
-- JavaScript
-- Node.js
-- Express.js
-- Sequelize
-- PostgreSQL
-- Docker
 
-##Rodando localmente
+---
 
-Clonar o repositório:
+## 🛠️ Tecnologias Utilizadas
+
+- **JavaScript**
+- **Node.js**
+- **Express.js**
+- **Sequelize**
+- **PostgreSQL**
+- **Docker**
+
+---
+
+## 🚀 Rodando Localmente
+
+### 1. Clone o repositório:
+
+```bash
 git clone https://github.com/Ioshuasl/TrainerCalendar.git
+```
 
-##Instalar as dependencias
-npm init
-(se não tiver o arquivo package.json)
+### 2. Instalar as dependencias
 
-npm install express
+```bash
+npm install
+```
 
-npm install pg
-
-npm install sequelize pg
-
+### 3. Instalar o docker e rodar o seguinte
+```bash
 docker run --name appteste -e POSTGRES_PASSWORD=1234 -d -p 5432:5432 postgres
+```
 
-Inicializando o servidor
+### 4. Inicializando o servidor
+
+```bash
 node index.js
-
-##Funcionalidades
-- Criar aluno: cadastra um novo aluno dentro do sistema
-- Listar alunos: mostrar todos os alunos cadastrados dentro do sistema
-- Atualizar aluno: atualiza o aluno que desejar
--Deletar aluno: deleta o aluno dentro do sistema
-- Criar treinos: cadastra treinos para os alunos dentro do sistema, nessa funcionalidade também tem a função de criar treinos posteriores para as próximas semanas
-- Listar treinos: mostrar todos os treinos de todos os alunos cadastrados no sistema
-- Atualizar treino: atualiza o treino que desejar
-- Deletar treino: deleta o treino dentro do sistema e se quiser também deleta os treinos posteriores a esses
+```
