@@ -1,6 +1,6 @@
 # 🏋️‍♂️ Trainer Calendar
 
-**Trainer Calendar** é uma agenda digital desenvolvida para personal trainers que buscam mais praticidade e organização no seu dia a dia. Com ela, é possível gerenciar alunos, treinos, datas e horários de forma simples e eficiente — tudo na palma da mão!
+**Trainer Calendar** é uma agenda digital desenvolvida para personal trainers. Essa aplicação pode fornecer mais organização, praticidade e qualidade para a rotina do personal trainer pois permite ele cadastrar os alunos, todos os treinos de cada aluno. Isso facilita para saber qual treino o aluno tem que fazer, ou quais alunos o personal vai precisar atender hoje e em quais horários. Por enquanto está desenvolvido somente o backend mas assim que eu desenvolver habilidade para frontend vou integrar as interfaces
 
 ---
 
